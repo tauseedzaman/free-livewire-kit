@@ -13,7 +13,7 @@ class CRUDWithModal extends Component
     public $slug;
     public $posts;
     public $isModalOpen = false;
-    public $postIdToDelete;
+    public $postIdToUpdate;
 
     // Validation rules
     protected $rules = [
@@ -92,8 +92,7 @@ class CRUDWithModal extends Component
      */
     public function deletePost($postId)
     {
-        $this->postIdToDelete = $postId;
-        ModelsPost::find($this->postIdToDelete)->delete();
+        ModelsPost::find($postId)->delete();
         $this->dispatch('success', ['message' => 'Post deleted successfully.']);
     }
 
