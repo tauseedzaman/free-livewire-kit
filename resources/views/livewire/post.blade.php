@@ -9,17 +9,17 @@
                         <label class="text-gray-800 font-semibold block my-3 text-md" for="title">Title</label>
                         <input class="w-full bg-gray-100 px-4 py-2 rounded-lg focus:outline-none" type="text"
                             name="title" id="title" wire:model.live="title" />
-                            @error('title')
-                                <span class="text-red-500">{{ $message }}</span>
-                            @enderror
+                        @error('title')
+                            <span class="text-red-500">{{ $message }}</span>
+                        @enderror
                     </div>
                     <div>
                         <label class="text-gray-800 font-semibold block my-3 text-md" for="email">Slug</label>
                         <input class="w-full bg-gray-100 px-4 py-2 rounded-lg focus:outline-none" type="text"
                             name="slug" readonly disabled id="slug" wire:model.lazy="slug" />
-                            @error('slug')
-                                <span class="text-red-500">{{ $message }}</span>
-                            @enderror
+                        @error('slug')
+                            <span class="text-red-500">{{ $message }}</span>
+                        @enderror
                     </div>
                     <button type="submit"
                         class="w-full mt-6 bg-purple-600 hover:bg-purple-700 rounded-lg px-4 py-2 text-lg text-white tracking-wide font-semibold font-sans">Save</button>
@@ -49,16 +49,17 @@
                                 </thead>
                                 <tbody class="text-sm divide-y divide-gray-100">
                                     @foreach ($posts as $post)
-                                    <tr>
-                                        <td class="p-2 whitespace-nowrap">
-                                            <div class="text-left">{{ $post->title }}</div>
-                                        </td>
-                                        <td class="p-2 whitespace-nowrap">
-                                            <div class="text-left font-medium text-green-500">{{ $post->slug }}</div>
-                                        </td>
-                                    </tr>
+                                        <tr>
+                                            <td class="p-2 whitespace-nowrap">
+                                                <div class="text-left">{{ $post->title }}</div>
+                                            </td>
+                                            <td class="p-2 whitespace-nowrap">
+                                                <div class="text-left font-medium text-green-500">{{ $post->slug }}
+                                                </div>
+                                            </td>
+                                        </tr>
                                     @endforeach
-                                    
+
 
                                 </tbody>
                             </table>
